@@ -17,7 +17,6 @@ function ItemDetail(props) {
   return (
     <div>
       <div style={centerText}>
-        <h2>Vista item detail</h2>
         <img style={imageStyles} src={props.data.image} alt="" />
         <p>{props.data.title}</p>
         <p>{props.data.category}</p>
