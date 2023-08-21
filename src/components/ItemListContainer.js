@@ -23,11 +23,10 @@ function ItemListContainer(props) {
   }, [id]);
 
   return (
-    <div>
+    <div className="h-1/2 w-full">
       <h2>{props.greeting}</h2>
 
       <ItemList data={data} />
-      <h2>vista desde Item list container</h2>
     </div>
   );
 }

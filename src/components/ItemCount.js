@@ -20,7 +20,7 @@ function ItemCount({ initial, stock, onAdd }) {
   }, [initial]);
 
   return (
-    <main className="p-2 grow">
+    <main className="">
       <button disabled={contador >= stock} onClick={sumar}>
         +
       </button>

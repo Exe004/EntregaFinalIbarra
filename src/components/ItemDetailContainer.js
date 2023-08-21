@@ -8,7 +8,7 @@ import { vehicles } from "../mock";
 function ItemDetailContainer() {
   const [data, setData] = useState({});
 
-  const { id } = useParams();
+  const { id } = useParams(); 
 
   useEffect(() => {
     const getData = new Promise((resolve) => {

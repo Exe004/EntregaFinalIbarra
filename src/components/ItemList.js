@@ -3,7 +3,7 @@ import Item from "./Item";
 
 function ItemList({ data = [] }) {
   return (
-    <div>
+    <div >
       {data.length == 0 ? (
         <p> cargando </p>
       ) : (
