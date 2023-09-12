@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 
+
 function ItemCount({ initial, stock, onAdd }) {
-  let [contador, setContador] = useState(initial);
+  const [contador, setContador] = useState(initial);
+
 
   const sumar = () => {
     setContador(contador + 1);

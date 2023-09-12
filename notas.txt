@@ -1,0 +1,4 @@
+cosas que voy viendo que faltan
+
+El botón de terminar compra o agregar al carrito debe aparecer en ItemDetail cuando se confirme la compra y debe poder navegar a un componente vacío por el momento en la ruta ‘/cart’.
+

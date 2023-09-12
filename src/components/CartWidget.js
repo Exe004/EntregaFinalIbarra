@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { contexto } from "./CartContext";
+import { NavLink } from "react-router-dom";
 
 function CartWidget() {
+  const {totalProducts} = useContext(contexto);
+  
   return (
-    <div>
+    <NavLink to="/cart">
       <i className="material-icons">shopping_cart</i>
-      <span>5</span>
-    </div>
+      <span>{totalProducts}</span>
+    </NavLink>
   );
 }
 
