@@ -8,7 +8,7 @@ function CartWidget() {
   return (
     <NavLink to="/cart">
       <i className="material-icons">shopping_cart</i>
-      <span>{totalProducts}</span>
+      <span>{totalProducts() || ''}</span>
     </NavLink>
   );
 }

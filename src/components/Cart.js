@@ -7,7 +7,8 @@ function Cart() {
   const {cart, totalPrice} = useContext(contexto);
   
 
-//   console.log(totalPrice)
+//   console.log(cart)
+//   console.log(cart.price + ' cart price' )
 if (cart.length === 0) {
 		return (
 			<>
@@ -24,6 +25,7 @@ if (cart.length === 0) {
 			))}
 			<p>total: {totalPrice()}</p>
 			{console.log(totalPrice())}
+			
 		
 		</>
 	);

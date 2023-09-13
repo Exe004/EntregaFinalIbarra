@@ -3,9 +3,8 @@ import { createContext, useState } from "react";
 export const contexto = createContext(); // creo contexto
 const Provider = contexto.Provider; // le saco provider, esto es un componente
 
-
 // export const CartContext = createContext({
-  
+
 //   addItem: () => {}, // Función para agregar un producto al carrito
 //   removeItem: () => {}, // Función para eliminar un producto del carrito
 //   clearCart: () => {}, // Función para vaciar el carrito
@@ -14,7 +13,6 @@ const Provider = contexto.Provider; // le saco provider, esto es un componente
 //   cart: [], // Inicialmente, el carrito está vacío
 //   // totalQuantity: 0, // Inicialmente, la cantidad total es 0
 // });
-
 
 const CustomProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
@@ -50,7 +48,9 @@ const CustomProvider = ({ children }) => {
   // console.log(cart);
 
   const addItem = (item, quantity) => {
-    const existingProductIndex = cart.findIndex(product => product.id === item.id);
+    const existingProductIndex = cart.findIndex(
+      (product) => product.id === item.id
+    );
 
     if (existingProductIndex !== -1) {
       // Si el producto ya existe en el carrito, aumentar la cantidad
@@ -59,30 +59,24 @@ const CustomProvider = ({ children }) => {
       setCart(updatedCart);
     } else {
       // Si el producto no existe en el carrito, agregarlo
-      setCart(prev => [...prev, { ...item, quantity }]);
+      setCart((prev) => [...prev, { ...item, quantity }]);
     }
   };
-
-
-
-
-
-
 
   const clearCart = () => setCart([]);
 
   // const isInCart = (id) =>
   //   cart.find((product) => product.id === id) ? true : false;
 
-  const removeProduct = (id) =>{
+  const removeProduct = (id) => {
     const newCart = cart.filter((product) => product.id !== id);
-  setCart(newCart)
-  }
+    setCart(newCart);
+  };
 
   const totalPrice = () => {
-    const price = cart.reduce((prev, act) => prev + act.quantity * act.price, 0);
-    return price;
-  };
+    return cart.reduce(
+      (prev, act) => prev + act.quantity * act.price,
+      0)};
 
   const totalProducts = () =>
     cart.reduce(
@@ -104,15 +98,9 @@ const CustomProvider = ({ children }) => {
     // isInCart,
     clearCart,
     cart,
-  }
+  };
 
-  return (
-    <Provider
-      value={cartContext}
-    >
-      {children}
-    </Provider>
-  );
+  return <Provider value={cartContext}>{children}</Provider>;
 };
 
 export default CustomProvider;
