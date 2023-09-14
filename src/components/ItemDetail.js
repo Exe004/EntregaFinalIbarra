@@ -47,9 +47,10 @@ function ItemDetail(props) {
       
       <div style={centerText}>
         <img style={imageStyles} src={props.data.image} alt="" />
+        <p>$ {props.data.price}</p>
         <p>{props.data.title}</p>
         <p>{props.data.category}</p>
-        <p>$ {props.data.price}</p>
+        
         {
           goToCart
               ? <Link to='/cart'>Terminar Compra</Link>

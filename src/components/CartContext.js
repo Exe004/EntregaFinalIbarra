@@ -31,42 +31,42 @@ const CustomProvider = ({ children }) => {
 
   //remove, dejemos pasar todos los productos que no tengan ese id
 
-  // const addItem = (item, quantity) => {
-  //   if (isInCart(item.id)) {
-  //     setCart(
-  //       cart.map((product) => {
-  //         return product.id === item.id
-  //           ? { ...product, quantity: product.quantity + quantity }
-  //           : product;
-  //       })
-  //     );
-  //   } else {
-  //     setCart([...cart, { ...item, quantity }]);
-  //   }
-  //   console.log(cart);
-  // };
-  // console.log(cart);
-
   const addItem = (item, quantity) => {
-    const existingProductIndex = cart.findIndex(
-      (product) => product.id === item.id
-    );
-
-    if (existingProductIndex !== -1) {
-      // Si el producto ya existe en el carrito, aumentar la cantidad
-      const updatedCart = [...cart];
-      updatedCart[existingProductIndex].quantity += quantity;
-      setCart(updatedCart);
+    if (isInCart(item.id)) {
+      setCart(
+        cart.map((product) => {
+          return product.id === item.id
+            ? { ...product, quantity: product.quantity + quantity }
+            : product;
+        })
+      );
     } else {
-      // Si el producto no existe en el carrito, agregarlo
-      setCart((prev) => [...prev, { ...item, quantity }]);
+      setCart([...cart, { ...item, quantity }]);
     }
+    console.log(cart);
   };
+  console.log(cart);
+
+  // const addItem = (item, quantity) => {
+  //   const existingProductIndex = cart.findIndex(
+  //     (product) => product.id === item.id
+  //   );
+
+  //   if (existingProductIndex !== -1) {
+  //     // Si el producto ya existe en el carrito, aumentar la cantidad
+  //     const updatedCart = [...cart];
+  //     updatedCart[existingProductIndex].quantity += quantity;
+  //     setCart(updatedCart);
+  //   } else {
+  //     // Si el producto no existe en el carrito, agregarlo
+  //     setCart((prev) => [...prev, { ...item, quantity }]);
+  //   }
+  // };
 
   const clearCart = () => setCart([]);
 
-  // const isInCart = (id) =>
-  //   cart.find((product) => product.id === id) ? true : false;
+  const isInCart = (id) =>
+    cart.find((product) => product.id === id) ? true : false;
 
   const removeProduct = (id) => {
     const newCart = cart.filter((product) => product.id !== id);
@@ -95,7 +95,7 @@ const CustomProvider = ({ children }) => {
     totalProducts,
     addItem,
     removeProduct,
-    // isInCart,
+    isInCart,
     clearCart,
     cart,
   };

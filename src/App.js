@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
 import CustomProvider from "./components/CartContext";
+// import "./db/migrations"
+//ese import sirve solo para subir las cosas a la base de datos y cuando se renderiza borralo asi no te vuelve a subir
 
 function App() {
 
