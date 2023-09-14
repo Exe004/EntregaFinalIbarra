@@ -5,6 +5,9 @@ import { contexto } from './CartContext'
 function CartItem({product}) {
     const {removeProduct} = useContext(contexto)
 
+
+   
+    // console.log(product.id)
   return (
     <div>
         <img src={product.image} alt={product.title} />

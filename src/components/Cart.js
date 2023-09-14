@@ -7,12 +7,15 @@ import { db } from "../db/firebase";
 
 
 function Cart() {
-  const {cart, totalPrice} = useContext(contexto);
+  
   const [token, setToken] = useState("")
+
+  const {cart, totalPrice} = useContext(contexto);
   
 
 //   console.log(cart)
 //   console.log(cart.price + ' cart price' )
+
 
 const onBuy = () => {
 
@@ -67,6 +70,9 @@ const handleClick = () => {
 		})
 }
 
+
+
+
 if (cart.length === 0) {
 		return (
 			<>
@@ -81,15 +87,16 @@ if (cart.length === 0) {
 			{cart.map((product) => (
 				<CartItem key={product.id} product={product} />
 			))}
+			
 			<p>total: {totalPrice()}</p>
 			{console.log(totalPrice())}
 			
-		  {/* <form> */}
+		  <form>
 		  <input type="text" placeholder="Nombre" />
             <input type="email" placeholder="Email" />
             {/* <button onClick={onBuy}>comprar</button> */}
-            {/* </form> */}
 			<button onClick={handleClick}>Emitir Compra</button>
+            </form>
             <p>Token de venta : {token}</p>
 
 		</>

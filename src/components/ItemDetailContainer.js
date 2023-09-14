@@ -20,7 +20,7 @@ function ItemDetailContainer() {
     consulta
     .then((res)=>{
       console.log('todo bien')
-      console.log(res)
+      console.log(res.data())
       setData(res.data())
     })
     .catch((err)=>{

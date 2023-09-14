@@ -45,6 +45,7 @@ const CustomProvider = ({ children }) => {
     }
     console.log(cart);
   };
+  console.log('------------------cart id---------------')
   console.log(cart);
 
   // const addItem = (item, quantity) => {

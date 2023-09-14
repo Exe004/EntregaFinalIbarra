@@ -43,7 +43,7 @@ function ItemListContainer(props) {
           //var del profe
           const producto = doc.data()
           producto.id = doc.id
-          console.log('-----------------------------------------')
+          // console.log('-----------------------------------------')
           // console.log(producto)
           // const producto = {
           //     id: doc.id,
