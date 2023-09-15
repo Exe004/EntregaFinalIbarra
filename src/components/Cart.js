@@ -11,14 +11,9 @@ import {
 import { db } from "../db/firebase";
 
 function Cart() {
-
-
-
   const [token, setToken] = useState("");
-  const [nombre, setNombre] = useState('');
-  const [email, setEmail] = useState('');
-
-
+  const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
 
   const { cart, totalPrice } = useContext(contexto);
 
@@ -49,36 +44,26 @@ function Cart() {
     setEmail(event.target.value);
   };
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log('Nombre:', nombre);
-    console.log('Email:', email);
+    console.log("Nombre:", nombre);
+    console.log("Email:", email);
 
-   
-    setNombre('');
-    setEmail('');
+    setNombre("");
+    setEmail("");
   };
-
-
-
-
-
-
-
-
 
   const venta = {
     usuario: {
-      nombre: "Juan",
-      email: "juan@mail.com",
+      nombre: nombre,
+      email: email,
     },
     fecha: serverTimestamp(),
-    productos: [
-      { id: "asdasdasd", cantidad: 2, precio: 1000 },
-      { id: "asdasdasd", cantidad: 2, precio: 1000 },
-    ],
+    // productos: [
+    //   { id: "asdasdasd", cantidad: 2, precio: 1000 },
+    //   { id: "asdasdasd", cantidad: 2, precio: 1000 },
+    // ],
     items: cart.map((product) => ({
       id: product.id,
       title: product.title,
@@ -104,6 +89,8 @@ function Cart() {
       });
   };
 
+  console.log(cart)
+
   if (cart.length === 0) {
     return (
       <>
@@ -119,9 +106,6 @@ function Cart() {
         ))}
         <p>total: {totalPrice()}</p>
         {console.log(totalPrice())}
-
-
-
 
         <form onSubmit={handleSubmit}>
           <div>
@@ -141,15 +125,11 @@ function Cart() {
             />
           </div>
           <div>
-            <button onClick={handleClick} type="submit">Emitir Compra</button>
+            <button onClick={handleClick} type="submit">
+              Emitir Compra
+            </button>
           </div>
         </form>
-
-
-
-
-
-
 
         {/* <input type="text" placeholder="Nombre" />
             <input type="email" placeholder="Email" />
