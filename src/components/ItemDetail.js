@@ -8,7 +8,6 @@ function ItemDetail(props) {
   const [goToCart, setGoToCar] = useState(false);
 
   const valorActualDelContexto = useContext(contexto);
-  //  console.log('valor del contexto ' + valorActualDelContexto.addItem);
 
   const centerText = {
     textAlign: "center",
@@ -23,16 +22,11 @@ function ItemDetail(props) {
   };
 
   const onAdd = (quantity) => {
-    console.log(`Compraste ${quantity} unidades`);
+  
     setInfo(quantity);
     setGoToCar(true);
     valorActualDelContexto.addItem(props.data, quantity);
   };
-
-  //  console.log(valorActualDelContexto.addItem)
-
-  // console.log(info)
-  //falta desaparecer el itemCount
 
   return (
     <div>

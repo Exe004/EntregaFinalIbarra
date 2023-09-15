@@ -15,30 +15,25 @@ function Item(props) {
 
   return (
     <section>
-      {props.data.length == 0 
-        ? <p> cargando </p>
-        : props.data.map((item, i) => {
+      {props.data.length == 0 ? (
+        <p> cargando </p>
+      ) : (
+        props.data.map((item, i) => {
           return (
             <article key={i}>
               <Link to={`/item/${item.id}`}>
-                
-                <p style={centerText}>$ {item.price} - {item.title}</p>
-                {/* <p style={centerText}></p> */}
+                <p style={centerText}>
+                  $ {item.price} - {item.title}
+                </p>
+
                 <img style={imageStyles} src={item.image} alt="" />
               </Link>
-
-              {/* <h2 >${item.price} - {item.title}</h2>
-                    <img src={item.image} alt={item.title}  />
-                    <Link to={`/item/${item.id}`}>ver detalle</Link> */}
             </article>
           );
         })
-      }
+      )}
     </section>
   );
-
-  // return (
-  // );
 }
 
 export default Item;

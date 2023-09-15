@@ -3,12 +3,12 @@ import { contexto } from "./CartContext";
 import { NavLink } from "react-router-dom";
 
 function CartWidget() {
-  const {totalProducts} = useContext(contexto);
-  
+  const { totalProducts } = useContext(contexto);
+
   return (
     <NavLink to="/cart">
       <i className="material-icons">shopping_cart</i>
-      <span>{totalProducts() || ''}</span>
+      <span>{totalProducts() || ""}</span>
     </NavLink>
   );
 }

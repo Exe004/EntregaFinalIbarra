@@ -5,8 +5,7 @@ import data from "./seedData.json";
 const productosCollection = collection(db, "products");
 
 data.forEach((producto) => {
-  // individual, no plural productos
-  addDoc(productosCollection, producto) // primero la coleccion a la cual quiero agregar el documento, debe venir de una base ya conectada, el segundo la data, el documento en si que le queres meter a la coleccion. Eso seria ocmo el fetch
+  addDoc(productosCollection, producto)
     .then((resultado) => {
       console.log(",then - resultado: ", resultado);
       return console.log("Producto agregado");
