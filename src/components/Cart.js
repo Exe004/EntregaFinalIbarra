@@ -66,7 +66,7 @@ function Cart() {
     fecha: serverTimestamp(),
     // productos: [
     //   { id: "asdasdasd", cantidad: 2, precio: 1000 },
-    //   { id: "asdasdasd", cantidad: 2, precio: 1000 },
+    //   { id: "asdasdasd", cantidad:2, precio: 1000 },
     // ],
     items: cart.map((product) => ({
       id: product.id,
