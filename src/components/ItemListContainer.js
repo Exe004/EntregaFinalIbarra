@@ -53,9 +53,13 @@ function ItemListContainer(props) {
           return producto;
         })
         console.log(aux)
+        if (id) {
+          setData(aux.filter((car) => car.category == id));
+        } else {
+         setData(aux);
+        }
 
-
-        setData(aux)
+        // setData(aux)
 
       })
       .catch((error) => {
@@ -67,11 +71,7 @@ function ItemListContainer(props) {
     //     resolve(vehicles);
     //   }, 3000);
     // });
-    // if (id) {
-    //   getData.then((res) => setData(res.filter((car) => car.category == id)));
-    // } else {
-    //   getData.then((res) => setData(res));
-    // }
+  
   }, [id]);
 
   return (

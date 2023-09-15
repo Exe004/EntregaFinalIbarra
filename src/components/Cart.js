@@ -53,6 +53,7 @@ function Cart() {
 
     setNombre("");
     setEmail("");
+
 	setbuy(true)
 
   };

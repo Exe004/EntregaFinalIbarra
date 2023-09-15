@@ -4,6 +4,7 @@ En primera instancia cree el componente App.js en donde se encuentra alojada la 
 Tambien aquí están alojadas las rutas enviadas a main como childrens.
 
 Luego de eso pasé a la creacion de ItemListContainer la cual va a ser contenedora del componente Item en su interior, el cual renderiza los componentes. Además ItemListContainer es el que recibirá de la base de datos de firestore los productos para mostrarlos en pantalla en la pagina principal.
+Este componente tambien permitira la posibilidad de ver los productos por categoria en caso de ser necesario. En este caso motocicletas o automoviles a traves del id de la categoria.
 
 Seguidamente paso a la creacion de ItemDetailContainer. Este componente se caracteriza por recibir un solo producto y tener dentro a ItemDetail, el cual renderizara en detalle los productos traidos, y este a su vez tiene dentro el contador; este componente sumará y/o restará la cantidad de unidades de un mismo producto la cual será nuevamente enviada a ItemDetail que a traves de la funcion onAdd() guardará esta información, y a su vez la misma posee la informacion del contexto global para su posterior manejo
 
