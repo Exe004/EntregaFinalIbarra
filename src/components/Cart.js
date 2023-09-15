@@ -14,6 +14,7 @@ function Cart() {
   const [token, setToken] = useState("");
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
+  const [buy, setbuy] = useState(false)
 
   const { cart, totalPrice } = useContext(contexto);
 
@@ -52,6 +53,8 @@ function Cart() {
 
     setNombre("");
     setEmail("");
+	setbuy(true)
+
   };
 
   const venta = {
@@ -89,13 +92,24 @@ function Cart() {
       });
   };
 
-  console.log(cart)
 
-  if (cart.length === 0) {
+  console.log(cart)
+  if (buy) {
+    // Si la compra fue exitosa, mostrar el mensaje de agradecimiento
+    return (
+      <>
+        <p>¡Gracias por su compra!</p>
+        <p>Token de venta: {token}</p>
+        <Link to="/">Volver a comprar</Link>
+      </>
+    );
+}
+  else if (cart.length === 0) {
     return (
       <>
         <p>No hay elementos en el carrito</p>
         <Link to="/">Hacer compras</Link>
+		
       </>
     );
   } else {
