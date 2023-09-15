@@ -83,7 +83,7 @@ function Cart() {
     const laVenta = addDoc(ventasCollection, venta);
     laVenta
       .then((resultado) => {
-        console.log("Se guardo la venta");
+        console.log("Se guardó la venta");
         console.log(resultado);
         setToken(resultado.id);
       })
