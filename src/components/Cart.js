@@ -16,7 +16,7 @@ function Cart() {
 //   console.log(cart)
 //   console.log(cart.price + ' cart price' )
 
-
+const ventasCollection = collection(db, 'ventas')
 const onBuy = () => {
 
 	// const ventasCollection = collection(db, "ventas")
@@ -56,7 +56,7 @@ const onBuy = () => {
 
 const handleClick = () => {
 	const db = getFirestore();
-	const ventasCollection = collection(db, 'ventas')
+	
 	const laVenta = addDoc(ventasCollection, venta)
 	laVenta
 		.then((resultado) => {
@@ -91,12 +91,12 @@ if (cart.length === 0) {
 			<p>total: {totalPrice()}</p>
 			{console.log(totalPrice())}
 			
-		  <form>
+		  {/* <form> */}
 		  <input type="text" placeholder="Nombre" />
             <input type="email" placeholder="Email" />
             {/* <button onClick={onBuy}>comprar</button> */}
 			<button onClick={handleClick}>Emitir Compra</button>
-            </form>
+            {/* </form> */}
             <p>Token de venta : {token}</p>
 
 		</>
